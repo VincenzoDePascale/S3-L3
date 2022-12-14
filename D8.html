@@ -97,6 +97,7 @@
       const addClassToTitle = function () {
         const NewClass = document.getElementsByTagName(`h1`)[0];
         NewClass.classList.add(`myHeading`);
+        //oppure --> NexTitle.setAttribute("class","myHeading")
       };
       addClassToTitle();
 
@@ -107,9 +108,13 @@
       const changePcontent = function () {
         const p = document.querySelectorAll(`div p`);
         for (let i = 0; i < p.length; i++) {
-          p[i].innerText = `nuovo testo paragrafo`;
+          p[i].innerText = `es.6 nuovo testo paragrafo`;
         }
+        //
+        //
+        //
       };
+
       changePcontent();
 
       /* ESERCIZIO 4
@@ -117,8 +122,8 @@
         */
 
       const changeUrls = function () {
-        const link = document.querySelector(`a`);
-        link.href = `https://www.google.com`;
+        const linkGoogle = document.querySelectorAll(`a:not(footer a)`);
+        linkGoogle.href = `https://www.google.com`;
       };
       changeUrls();
 
@@ -128,8 +133,8 @@
 
       const addToTheSecond = function () {
         const newElementList = document.createElement("li");
-        newElementList.innerText = "nuovo elemento di lista es.5";
         const padre = document.getElementById("secondList");
+        newElementList.innerText = "nuovo elemento di lista es.5";
         padre.appendChild(newElementList);
       };
       addToTheSecond();
@@ -141,7 +146,7 @@
       const addParagraph = function () {
         const newParagraph = document.createElement("p");
         newParagraph.innerText = "nuovo p es.6";
-        const padre = document.querySelector(`div`);
+        const padre = document.querySelector(`div div`);
         padre.appendChild(newParagraph);
       };
       addParagraph();
@@ -151,8 +156,8 @@
       */
 
       const hideFirstUl = function () {
-        const Paragrafh = document.getElementsByTagName(`secondList`);
-        Paragrafh.remove;
+        const Paragrafh = document.getElementById(`secondList`);
+        Paragrafh.remove();
       };
       hideFirstUl();
 
@@ -160,19 +165,25 @@
          Scrivi una funzione che renda verde il background di ogni lista non ordinata
         */
 
-      const paintItGreen = function () {};
+      const paintItGreen = function () {
+        const verde = document.querySelectorAll("ul");
+        verde.forEach((li) => (li.style.backgroundColor: verde));
+      };
+      paintItGreen();
 
       /* ESERCIZIO 9
          Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
         */
 
       const makeItClickable = function () {};
+      makeItClickable();
 
       /* ESERCIZIO 10
          Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
         */
 
       const revealFooterLink = function () {};
+      revealFooterLink();
 
       /* ESERCIZIO 11
          Crea una funzione che crei una tabella nell'elemento con id "tableArea".
@@ -180,30 +191,35 @@
       */
 
       const generateTable = function () {};
+      generateTable();
 
       /* ESERCIZIO 12
          Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
       */
 
       const addRow = function () {};
+      addRow();
 
       /* ESERCIZIO 14
         Crea una funzione che nasconda le immagini della tabella quando eseguita
       */
 
       const hideAllImages = function () {};
+      hideAllImages();
 
       /* EXTRA ESERCIZIO 15
         Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
       */
 
       const changeColorWithRandom = function () {};
+      changeColorWithRandom();
 
       /* EXTRA ESERCIZIO 16
         Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
       */
 
       const deleteVowels = function () {};
+      deleteVowels();
     </script>
   </body>
 </html>

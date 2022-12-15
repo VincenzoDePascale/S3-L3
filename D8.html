@@ -114,7 +114,6 @@
         //
         //
       };
-
       changePcontent();
 
       /* ESERCIZIO 4
@@ -123,7 +122,9 @@
 
       const changeUrls = function () {
         const linkGoogle = document.querySelectorAll(`a:not(footer a)`);
-        linkGoogle.href = `https://www.google.com`;
+        for (let i = 0; i < linkGoogle.length; i++) {
+          linkGoogle[i].href = `https://www.google.com`;
+        }
       };
       changeUrls();
 
@@ -166,8 +167,12 @@
         */
 
       const paintItGreen = function () {
-        const verde = document.querySelectorAll("ul");
-        verde.forEach((li) => (li.style.backgroundColor: verde));
+        const verde = document.querySelectorAll("li");
+        let verdeArr = Array.from(verde);
+        verdeArr.forEach((li) => {
+          li.style.backgroundColor = "green";
+        });
+        return verdeArr;
       };
       paintItGreen();
 
@@ -175,14 +180,25 @@
          Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
         */
 
-      const makeItClickable = function () {};
+      const makeItClickable = function () {
+        const newH1 = document.getElementsByTagName("h1")[0];
+        new2H1 = newH1.split("").pop().join();
+        return new2H1;
+      };
       makeItClickable();
 
       /* ESERCIZIO 10
          Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
         */
 
-      const revealFooterLink = function () {};
+      const revealFooterLink = function () {
+        const footer = document.querySelector("footer");
+        footer.onclick = function () {
+          let link = document.querySelector("footer a");
+          let url = link.getAttribute("href");
+          alert(url);
+        };
+      };
       revealFooterLink();
 
       /* ESERCIZIO 11
